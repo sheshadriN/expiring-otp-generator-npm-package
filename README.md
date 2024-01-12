@@ -1,4 +1,4 @@
-﻿# Expiring OTP Generator
+# Expiring OTP Generator
 
 Expiring OTP Generator is a simple Node.js module for generating and managing expiring one-time passwords (OTPs). It provides a straightforward way to generate OTPs, store them with an expiration time, verify OTPs, and automatically clean up expired OTPs.
 
@@ -52,4 +52,5 @@ Acknowledgments
 Special thanks to the Node.js community for their valuable contributions and feedback.
 
 Make sure to replace the placeholder details with the appropriate information for your module. Add any additional sections or details based on the features and usage of your npm module.
+
 
