@@ -7,50 +7,50 @@ Expiring OTP Generator is a simple Node.js module for generating and managing ex
 ```bash
 npm install expiring-otp-generator
 ```
-Usage
-
 const otpGenerator = require('expiring-otp-generator');
 
-// Generate and store an OTP
-const email = 'example@email.com';
-const expiryTime = 60000; // 1 minute in milliseconds
-const otp = otpGenerator.generateAndStoreOTP(6, email, expiryTime);
+* Generate and store an OTP:
+    ```javascript
+    const email = 'example@email.com';
+    const expiryTime = 60000; // 1 minute in milliseconds
+    const otp = otpGenerator.generateAndStoreOTP(6, email, expiryTime);
+    ```
 
-// Verify the OTP
-const isVerified = otpGenerator.verifyOTP(otp, email);
-if (isVerified) {
-    console.log('OTP verification successful');
-} else {
-    console.log('OTP verification failed');
-}
+* Verify the OTP:
+    ```javascript
+    const isVerified = otpGenerator.verifyOTP(otp, email);
+    if (isVerified) {
+        console.log('OTP verification successful');
+    } else {
+        console.log('OTP verification failed');
+    }
+    ```
 
-// Start the cleanup interval
-otpGenerator.startCleanupInterval();
+* Start the cleanup interval:
+    ```javascript
+    otpGenerator.startCleanupInterval();
+    ```
 
+## API
 
-API
+* `generateAndStoreOTP(length: number, email: string, expiryTime?: number): string`
+    - Generates an OTP of the specified length, associates it with the provided email, and stores it with an optional expiration time. Returns the generated OTP.
+        - `length:` The length of the OTP.
+        - `email:` The email to associate with the generated OTP.
+        - `expiryTime:` Optional. Expiration time for the OTP in milliseconds. Default is 5 minutes.
 
-`generateAndStoreOTP(length: number, email: string, expiryTime?: number): string`
-Generates an OTP of the specified length, associates it with the provided email, and stores it with an optional expiration time. Returns the generated OTP.
+* `verifyOTP(otp: string, email: string): boolean`
+    - Verifies the provided OTP for the given email. Returns true if the OTP is valid; otherwise, returns false.
+        - `otp:` The OTP to verify.
+        - `email:` The email associated with the OTP.
 
-`length:` The length of the OTP.
-`email:` The email to associate with the generated OTP.
-`expiryTime:` Optional. Expiration time for the OTP in milliseconds. Default is 5 minutes.
-`verifyOTP(otp:` string, email: string): boolean
-`Verifies` the provided OTP for the given email. Returns true if the OTP is valid; otherwise, returns false.
+* `startCleanupInterval(): void`
+    - Starts an automatic cleanup interval to remove expired OTPs. The cleanup interval runs every 60 seconds by default.
 
-`otp:` The OTP to verify.
-`email:` The email associated with the OTP.
-`startCleanupInterval()`: void
-`Starts` an automatic cleanup interval to remove expired OTPs. The cleanup interval runs every 60 seconds by default.
+## License
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
-Acknowledgments
- This module is inspired by the need for a simple and efficient expiring OTP solution.
-Special thanks to the Node.js community for their valuable contributions and feedback.
+## Acknowledgments
 
-Make sure to replace the placeholder details with the appropriate information for your module. Add any additional sections or details based on the features and usage of your npm module.
-
-
+This module is inspired by the need for a simple and efficient expiring OTP solution. Special thanks to the Node.js community for their valuable contributions and feedback.
