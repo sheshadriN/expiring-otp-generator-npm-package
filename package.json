@@ -1,6 +1,6 @@
 {
     "name": "expiring-otp-generator",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "The otpGenerator.js module is designed to generate OTPs, associate them with email IDs, and automatically delete them after their expiry time",
     "main": "index.js",
     "scripts": {
