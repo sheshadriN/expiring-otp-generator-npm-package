@@ -6,7 +6,7 @@ Expiring OTP Generator is a simple Node.js module for generating and managing ex
 
 ```bash
 npm install expiring-otp-generator
-
+```
 Usage
 
 const otpGenerator = require('expiring-otp-generator');
